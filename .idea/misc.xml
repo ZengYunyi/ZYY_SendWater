@@ -3,12 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/border_circle_lines.xml" value="0.3485" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/bottom_nav.xml" value="0.1" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/font/left_in.xml" value="0.3921875" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/fragment_home.xml" value="0.3619791666666667" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/fragment_me.xml" value="0.3619791666666667" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/fragment_order.xml" value="0.3619791666666667" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/image_banner.xml" value="0.3619791666666667" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/layout_test1.xml" value="0.3619791666666667" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/layout_test2.xml" value="0.3619791666666667" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/rv_home_test.xml" value="0.3619791666666667" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/menu/main.xml" value="0.1703125" />
       </map>
     </option>

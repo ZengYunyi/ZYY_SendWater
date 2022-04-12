@@ -3,4 +3,5 @@
     <string name="menu_home">主页</string>
     <string name="menu_order">订单</string>
     <string name="menu_me">我的</string>
+    <string name="test_name">testName</string>
 </resources>

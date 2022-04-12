@@ -12,6 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ZYY_SendWater">
+        <activity android:name=".test.TestActivity1"
+            android:exported="true"/>
+        <activity android:name=".test.TestActivity2"
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

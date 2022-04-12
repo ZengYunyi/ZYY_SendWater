@@ -14,5 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="windowNoTitle">true</item>
         <item name="android:textColor">@color/black</item>
+<!--        配置允许window content transitions-->
+        <item name="android:windowActivityTransitions">true</item>
     </style>
 </resources>

@@ -12,7 +12,7 @@ import com.example.zyy_sendwater.repository.remote.StateEnum
 class MainViewModel :ViewModel() {
     val mainLiveData = MutableLiveData<StateEnum>()
 
-
-
+    val bottomNavLiveData = MutableLiveData<Boolean>()
+    val vpMainLiveData = MutableLiveData<Boolean>()
 
 }

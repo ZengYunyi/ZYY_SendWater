@@ -34,7 +34,7 @@ abstract class BaseFragment<T : ViewBinding> : Fragment(){
     fun remove() = requireActivity().supportFragmentManager.popBackStack()
     //添加fragment
     open fun add(fragment: Fragment) = requireActivity().supportFragmentManager.beginTransaction().add(
-        R.id.nav_fragment,fragment).setCustomAnimations(android.R.anim.slide_out_right,android.R.anim.slide_out_right).addToBackStack(null).commit()
+        R.id.layMain,fragment).setCustomAnimations(android.R.anim.slide_out_right,android.R.anim.slide_out_right).addToBackStack(null).commit()
     //提示窗显示长短
 //    fun shortToast(name : String)=Snackbar.make(context,name,Snackbar.LENGTH_LONG).show()
     fun shortToast(name : String)=Toast.makeText(context,name,Toast.LENGTH_SHORT).show()
