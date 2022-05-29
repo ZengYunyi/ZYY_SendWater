@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.example.zyy_sendwater.R
+import com.example.zyy_sendwater.viewModel.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 
 /**
@@ -16,6 +18,7 @@ import com.google.android.material.snackbar.Snackbar
  * @date :2022/4/1 16:08
  */
 abstract class BaseFragment<T : ViewBinding> : Fragment(){
+    var vm : MainViewModel? = null
     //fragment通用适配器简化代码
     private var binding : T? = null
     val b:T
@@ -27,6 +30,7 @@ abstract class BaseFragment<T : ViewBinding> : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         binding = viewBinding(container)
+        vm = ViewModelProvider(requireActivity())[MainViewModel::class.java]
         init()
         return binding?.root
     }

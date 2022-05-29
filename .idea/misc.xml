@@ -3,18 +3,41 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable-v24/background_search_bar.xml" value="0.363" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable-v24/login_back_border.xml" value="0.309" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable-v24/main_head_bg.xml" value="0.201" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/background_search_bar.xml" value="0.309" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/border_circle_lines.xml" value="0.3485" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/border_solid_lines.xml" value="0.363" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/bottom_nav.xml" value="0.1" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/button_border.xml" value="0.309" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/login_back_border.xml" value="0.309" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/login_image.xml" value="0.187" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/main_head_bg.xml" value="0.309" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/main_head_bg_round.xml" value="0.2395" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/drawable/my_progressbar_login.xml" value="0.309" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/font/left_in.xml" value="0.3921875" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/activity_start.xml" value="0.3564102564102564" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/content_srcolling.xml" value="0.3619791666666667" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/fragment_home.xml" value="0.3619791666666667" />
-        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/fragment_me.xml" value="0.3619791666666667" />
-        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/fragment_order.xml" value="0.3619791666666667" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/fragment_home_test.xml" value="0.34205128205128205" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/fragment_me.xml" value="0.25" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/fragment_order.xml" value="0.22" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/image_banner.xml" value="0.3619791666666667" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/layout_test1.xml" value="0.3619791666666667" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/layout_test2.xml" value="0.3619791666666667" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/motion_01_cl_end.xml" value="0.34739583333333335" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/motion_01_cl_start.xml" value="0.3619791666666667" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/motion_head.xml" value="0.3619791666666667" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/motion_head1.xml" value="0.3564102564102564" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/motion_heah.xml" value="0.22" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/rv_home_test.xml" value="0.3619791666666667" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/layout/scticity_srcolling.xml" value="0.3619791666666667" />
         <entry key="..\:/ZYY_SendWater/app/src/main/res/menu/main.xml" value="0.1703125" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/xml/login_xml.xml" value="0.18072916666666666" />
+        <entry key="..\:/ZYY_SendWater/app/src/main/res/xml/scene_01.xml" value="0.3619791666666667" />
       </map>
     </option>
   </component>

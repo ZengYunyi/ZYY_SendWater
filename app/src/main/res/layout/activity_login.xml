@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:id="@+id/image_login"
+        android:src="@drawable/login_image" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/motion_username"
+            android:layout_margin="@dimen/dp_10"
+            app:layoutDescription="@xml/login_username"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_loginUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="用户名"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edit_loginUsername"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint=""
+                android:focusable="true"
+                android:clickable="true"
+                android:backgroundTint="@color/blue"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/motion_password"
+            android:layout_margin="@dimen/dp_10"
+            app:layoutDescription="@xml/login_password"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_loginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="密码"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edit_loginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint=""
+                android:clickable="true"
+                android:focusable="true"
+                android:backgroundTint="@color/blue"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/test_btn"
+            android:background="@drawable/button_border"
+            android:layout_margin="@dimen/dp_10">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/numderView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:visibility="gone"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:indeterminateDrawable="@drawable/my_progressbar_login" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:text="登录"
+                    android:id="@+id/text"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/blue" />
+
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="没有账号？立刻注册。"
+            android:id="@+id/registry_btn"
+            android:gravity="center_horizontal"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:id="@+id/image_wechat"
+            android:src="@drawable/wechat"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:id="@+id/image_qq"
+            android:src="@drawable/qq"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:id="@+id/image_tel"
+            android:src="@drawable/phone"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

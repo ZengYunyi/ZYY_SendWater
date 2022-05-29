@@ -4,4 +4,35 @@
     <string name="menu_order">订单</string>
     <string name="menu_me">我的</string>
     <string name="test_name">testName</string>
+    <string name="home_rv_text">homeRvText</string>
+    <string name="home_rv_iamge">homeRvIamge</string>
+    <string name="strat_bottom">stratBottom</string>
+<!--    format的使用-->
+<!--        reference某资源ID-->
+<!--        color颜色值-->
+<!--        boolean布尔值-->
+<!--        dimension尺寸值-->
+<!--        float浮点值-->
+<!--        integer整形值-->
+<!--        string字符串-->
+<!--        fraction百分比-->
+<!--        enum枚举值-->
+<!--        flag位或运算-->
+<!--        用|定义多种类型-->
+    <declare-styleable name="progressCircleView">
+        <attr name="circleNumberWidth" format="dimension"/>
+        <attr name="circleDotWidth" format="dimension"/>
+        <attr name="circleRectWidth" format="dimension"/>
+        <attr name="circleNumberColor" format="color"/>
+        <attr name="circleDotColor" format="color"/>
+        <attr name="circleRectColor" format="color"/>
+        <attr name="circleColor" format="color"/>
+        <attr name="textColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="circleProgressBar">
+        <attr name="circleWidth" format="dimension"/>
+        <attr name="detaAngle" format="integer"/>
+        <attr name="firstColor" format="color"/>
+        <attr name="secondColor" format="color"/>
+    </declare-styleable>
 </resources>

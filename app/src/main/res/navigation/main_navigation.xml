@@ -36,17 +36,17 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.zyy_sendwater.ui.homeF.HomeFragment"
+        android:name="com.example.zyy_sendwater.ui.fragment.homeF.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/orderFragment"
-        android:name="com.example.zyy_sendwater.ui.orderF.OrderFragment"
+        android:name="com.example.zyy_sendwater.ui.fragment.orderF.OrderFragment"
         android:label="OrderFragment"
         tools:layout="@layout/fragment_order"/>
     <fragment
         android:id="@+id/meFragment"
-        android:name="com.example.zyy_sendwater.ui.meF.MeFragment"
+        android:name="com.example.zyy_sendwater.ui.fragment.meF.MeFragment"
         android:label="MeFragment"
         tools:layout="@layout/fragment_me"/>
 </navigation>

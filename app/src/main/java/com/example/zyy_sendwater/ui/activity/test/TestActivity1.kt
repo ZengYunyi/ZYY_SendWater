@@ -1,17 +1,10 @@
-package com.example.zyy_sendwater.test
+package com.example.zyy_sendwater.ui.activity.test
 
 import android.app.ActivityOptions
-import android.app.slice.Slice
 import android.content.Intent
-import android.os.Build
-import android.os.Bundle
-import android.transition.Slide
 import android.transition.TransitionInflater
 import android.util.Pair
 import android.view.LayoutInflater
-import android.view.Window
-import androidx.appcompat.app.AppCompatActivity
-import com.example.zyy_sendwater.MainActivity
 import com.example.zyy_sendwater.R
 import com.example.zyy_sendwater.base.BaseActivity
 import com.example.zyy_sendwater.databinding.LayoutTest1Binding
@@ -28,7 +21,6 @@ class TestActivity1 : BaseActivity<LayoutTest1Binding>() {
     }
 
     override fun init() {
-
         //转场动画使用场景
         /*
         * 1,在两个Activity之间切换时界面的过渡效果
@@ -52,12 +44,12 @@ class TestActivity1 : BaseActivity<LayoutTest1Binding>() {
 //        window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
 //        window.exitTransition == Exception()
         val slice=TransitionInflater.from(this).inflateTransition(R.transition.activity_slide)
-        window.exitTransition = slice
-        window.enterTransition = TransitionInflater.from(this).inflateTransition(R.transition.activity_slide)
+//        window.exitTransition = slice
+//        window.enterTransition = TransitionInflater.from(this).inflateTransition(R.transition.activity_slide)
         //是否运行布局时重叠
-        window.allowEnterTransitionOverlap = false
+//        window.allowEnterTransitionOverlap = false
         b.test1Image.setOnClickListener {
-            val intent = Intent(this,TestActivity2::class.java)
+            val intent = Intent(this, TestActivity2::class.java)
             val sharedView = b.test1Image
             val transitionName = getString(R.string.test_name)
 

@@ -5,19 +5,25 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:resizeableActivity="true"
         android:theme="@style/Theme.ZYY_SendWater">
-        <activity android:name=".test.TestActivity1"
+        <activity android:name=".ui.activity.StartActivity"
             android:exported="true"/>
-        <activity android:name=".test.TestActivity2"
+        <activity android:name=".ui.activity.test.TestActivity2"
+            android:exported="true"/>
+        <activity android:name=".ui.activity.test.TestActivity1"
+            android:exported="true"/>
+        <activity android:name=".ui.activity.MainActivity"
             android:exported="true"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

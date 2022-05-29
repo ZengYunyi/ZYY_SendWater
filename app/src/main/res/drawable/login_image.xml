@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap android:alpha="0.7" android:src="@drawable/clude"/>
+        <shape>
+            <corners android:bottomRightRadius="24dp" android:bottomLeftRadius="24dp"/>
+        </shape>
+    </item>
+
+</layer-list>

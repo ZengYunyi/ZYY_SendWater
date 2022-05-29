@@ -1,29 +1,25 @@
-package com.example.zyy_sendwater
+package com.example.zyy_sendwater.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
-import androidx.core.view.get
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.example.zyy_sendwater.R
 import com.example.zyy_sendwater.adapter.MainVpAdapter
 import com.example.zyy_sendwater.databinding.ActivityMainBinding
-import com.example.zyy_sendwater.ui.homeF.HomeFragment
-import com.example.zyy_sendwater.ui.meF.MeFragment
-import com.example.zyy_sendwater.ui.orderF.OrderFragment
+import com.example.zyy_sendwater.ui.fragment.homeF.HomeFragment
+import com.example.zyy_sendwater.ui.fragment.meF.MeFragment
+import com.example.zyy_sendwater.ui.fragment.orderF.OrderFragment
 import com.example.zyy_sendwater.viewModel.MainViewModel
 import java.lang.reflect.Field
 
 class MainActivity : AppCompatActivity() {
     private lateinit var menuItem: MenuItem
     //viewModel  初始化
-    private val viewModel :MainViewModel by viewModels()
+    val viewModel :MainViewModel by viewModels()
 
 
     //lateinit告诉系统延迟初始化对象
@@ -39,15 +35,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 //        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+//        val fade=Fade()
+//        fade.duration = 2000
+//        window.enterTransition = fade
+//        window.exitTransition = fade
         //底部导航栏监听
         val menu = binding.bottomNavigationView.menu
         menuItem = menu.getItem(0)
         binding.bottomNavigationView.setOnNavigationItemSelectedListener { item:MenuItem->
             when(item.itemId){
-                R.id.homeFragment->binding.vpMain.setCurrentItem(0,false)
-                R.id.orderFragment->binding.vpMain.setCurrentItem(1,false)
-                R.id.meFragment->binding.vpMain.setCurrentItem(2,false)
+                R.id.homeFragment ->binding.vpMain.setCurrentItem(0,false)
+                R.id.orderFragment ->binding.vpMain.setCurrentItem(1,false)
+                R.id.meFragment ->binding.vpMain.setCurrentItem(2,false)
             }
             return@setOnNavigationItemSelectedListener true
         }
@@ -63,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         //懒加载3个页面
         binding.vpMain.offscreenPageLimit=3
         binding.vpMain.adapter = mainVpAdapter
+        binding.vpMain.isUserInputEnabled = false
         //去掉Viewpager2的边界动画阴影
         try {
             //通过反射去掉阴影

@@ -16,4 +16,39 @@
         android:textColor="@color/white"
         android:textSize="16sp" />
 
+
+    <FrameLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center_horizontal">
+
+
+
+        <com.example.zyy_sendwater.ui.myview.CircleRectView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rectView"/>
+
+        <com.example.zyy_sendwater.ui.myview.CircleNumderView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:id="@+id/numderView"/>
+
+    </FrameLayout>
+
+
+
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="点击"
+        android:id="@+id/btn"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"/>
+
 </LinearLayout>
