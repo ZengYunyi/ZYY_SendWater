@@ -18,37 +18,33 @@ class MeFragment : BaseFragment<FragmentMeBinding>(){
     override fun init() {
 //        b.dotView.setDotColor(Color.parseColor("#1296db"))
 //        b.dotView.setDotColor(Color.parseColor("#1296db"))
-        b.rectView.setDotColor(Color.parseColor("#1296db"))
-        b.numderView.setTextColor(Color.parseColor("#1296db"))
-        b.numderView.setFirstColor(Color.parseColor("#1296db"))
-        b.numderView.setSecondColor(Color.parseColor("#1296db"))
-        b.numderView.setCircleWidth(7)
-        b.numderView.setProgress(0,true)
+        binding.rectView.setDotColor(Color.parseColor("#1296db"))
+        binding.numderView.setTextColor(Color.parseColor("#1296db"))
+        binding.numderView.setFirstColor(Color.parseColor("#1296db"))
+        binding.numderView.setSecondColor(Color.parseColor("#1296db"))
+        binding.numderView.setCircleWidth(7)
+        binding.numderView.setProgress(0,true)
 //        var animator = ObjectAnimator.ofFloat(b.dotView,"rotation",0f,360f)
 //        animator.repeatCount = ValueAnimator.INFINITE
 //        animator.interpolator = LinearInterpolator()
 //        animator.duration = 7000
 //        animator.start()
 
-        var animator = ObjectAnimator.ofFloat(b.rectView,"rotation",360f,0f)
+        var animator = ObjectAnimator.ofFloat(binding.rectView,"rotation",360f,0f)
         animator.repeatCount = ValueAnimator.INFINITE
         animator.duration = 8000
         animator.interpolator = LinearInterpolator()
         animator.start()
-        b.btn.setOnClickListener {
+        binding.btn.setOnClickListener {
             GlobalScope.launch(Dispatchers.Main) {
                 for(i in 0..100){
                     withContext(Dispatchers.IO){
                         delay(100)
                     }
-                    b.numderView.setProgress(i)
+                    binding.numderView.setProgress(i)
                 }
 
             }
         }
-    }
-
-    override fun viewBinding(container: ViewGroup?): FragmentMeBinding {
-        return FragmentMeBinding.inflate(layoutInflater,container,false)
     }
 }

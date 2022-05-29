@@ -14,16 +14,11 @@ import com.example.zyy_sendwater.databinding.ActivityStartBinding
  * @date :2022/4/15 15:05
  */
 class StartActivity : BaseActivity<ActivityStartBinding>() {
-    override fun viewBinding(layoutInflater: LayoutInflater): ActivityStartBinding {
-//TODO("Not yet implemented")
-        return ActivityStartBinding.inflate(layoutInflater)
-    }
 
     override fun init() {
-//TODO("Not yet implemented")
-        b.imagePage.setOnClickListener {
+        binding.imagePage.setOnClickListener {
             val intent =Intent(this, MainActivity::class.java)
-            val transient  = ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(b.imagePage,getString(
+            val transient  = ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(binding.imagePage,getString(
                 R.string.strat_bottom
             )))
             startActivity(intent,transient.toBundle())

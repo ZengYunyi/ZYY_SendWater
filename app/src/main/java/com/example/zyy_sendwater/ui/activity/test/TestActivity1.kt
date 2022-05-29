@@ -15,10 +15,7 @@ import com.example.zyy_sendwater.databinding.LayoutTest1Binding
  * @description: zyy21
  * @date :2022/4/12 11:10
  */
-class TestActivity1 : BaseActivity<LayoutTest1Binding>() {
-    override fun viewBinding(layoutInflater: LayoutInflater): LayoutTest1Binding {
-        return LayoutTest1Binding.inflate(layoutInflater)
-    }
+class TestActivity1 :BaseActivity<LayoutTest1Binding>(){
 
     override fun init() {
         //转场动画使用场景
@@ -43,22 +40,24 @@ class TestActivity1 : BaseActivity<LayoutTest1Binding>() {
         //动态配置window content transitions
 //        window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
 //        window.exitTransition == Exception()
-        val slice=TransitionInflater.from(this).inflateTransition(R.transition.activity_slide)
+        val slice = TransitionInflater.from(this).inflateTransition(R.transition.activity_slide)
 //        window.exitTransition = slice
 //        window.enterTransition = TransitionInflater.from(this).inflateTransition(R.transition.activity_slide)
         //是否运行布局时重叠
 //        window.allowEnterTransitionOverlap = false
-        b.test1Image.setOnClickListener {
+        binding.test1Image.setOnClickListener {
             val intent = Intent(this, TestActivity2::class.java)
-            val sharedView = b.test1Image
+            val sharedView = binding.test1Image
             val transitionName = getString(R.string.test_name)
 
 //            val transient = ActivityOptions.makeSceneTransitionAnimation(this,sharedView,transitionName)
             //多个控件的办法
-            val transient = ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(b.test1Image,getString(R.string.test_name)),
-            Pair.create(b.test1Text,"text"))
-            startActivity(intent,transient.toBundle())
+            val transient = ActivityOptions.makeSceneTransitionAnimation(
+                this, Pair.create(binding.test1Image, getString(R.string.test_name)),
+                Pair.create(binding.test1Text, "text")
+            )
+            startActivity(intent, transient.toBundle())
         }
     }
-
 }
+

@@ -17,23 +17,19 @@ import com.example.zyy_sendwater.databinding.FragmentHomeTestBinding
 class HomeTestFragment: BaseFragment<FragmentHomeTestBinding>() {
     override fun init() {
         sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(R.transition.activity_slide)
-        b.homeTestTopBack.setOnClickListener {
+        binding.homeTestTopBack.setOnClickListener {
             remove()
         }
         val bundle = arguments
-        b.homeTestImage.transitionName="a2${bundle?.getString("position")!!}"
+        binding.homeTestImage.transitionName="a2${bundle?.getString("position")!!}"
         Log.i("ddddd", "a2${bundle?.getString("position")!!}")
-        b.titleHomeTest.transitionName="a1${bundle?.getString("position")!!}"
-        b.homeTestImage?.load(bundle?.getInt("pic",1)!!)
-        b.titleHomeTest.setText(bundle?.getString("title",""))
-        b.homeTestContent.setText(bundle?.getString("content",""))
-        ViewCompat.setTransitionName(b.homeTestImage,bundle?.getString("tran"))
+        binding.titleHomeTest.transitionName="a1${bundle?.getString("position")!!}"
+        binding.homeTestImage?.load(bundle?.getInt("pic",1)!!)
+        binding.titleHomeTest.setText(bundle?.getString("title",""))
+        binding.homeTestContent.setText(bundle?.getString("content",""))
+        ViewCompat.setTransitionName(binding.homeTestImage,bundle?.getString("tran"))
     }
 
-    override fun viewBinding(container: ViewGroup?): FragmentHomeTestBinding {
-//TODO("Not yet implemented")
-        return FragmentHomeTestBinding.inflate(layoutInflater)
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

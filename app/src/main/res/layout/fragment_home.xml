@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/title_home"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/blue"
-        android:gravity="center"
-        android:maxLength="16"
-        android:text="@string/menu_home"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="16sp" />
-
-
-    <androidx.recyclerview.widget.RecyclerView
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/dp_10"
-        android:layout_marginRight="@dimen/dp_10"
-        android:id="@+id/home_rv_test"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_home"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/blue"
+            android:gravity="center"
+            android:maxLength="16"
+            android:text="@string/menu_home"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
 
-</LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:id="@+id/home_rv_test"/>
+
+    </LinearLayout>
+</layout>

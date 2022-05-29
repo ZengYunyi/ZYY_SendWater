@@ -1,54 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/title_home"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/blue"
-        android:gravity="center"
-        android:maxLength="16"
-        android:text="@string/menu_me"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-
-    <FrameLayout
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="100dp"
-        android:layout_gravity="center_horizontal">
-
-
-
-        <com.example.zyy_sendwater.ui.myview.CircleRectView
+        <TextView
+            android:id="@+id/title_home"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/rectView"/>
+            android:layout_height="50dp"
+            android:background="@color/blue"
+            android:gravity="center"
+            android:maxLength="16"
+            android:text="@string/menu_me"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
-        <com.example.zyy_sendwater.ui.myview.CircleNumderView
+
+        <FrameLayout
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center_horizontal">
+
+
+
+            <com.example.zyy_sendwater.ui.myview.CircleRectView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rectView"/>
+
+            <com.example.zyy_sendwater.ui.myview.CircleNumderView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:id="@+id/numderView"/>
+
+        </FrameLayout>
+
+
+
+
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="点击"
+            android:id="@+id/btn"
+            android:gravity="center"
             android:layout_gravity="center"
-            android:id="@+id/numderView"/>
+            android:layout_marginTop="5dp"/>
 
-    </FrameLayout>
+    </LinearLayout>
 
-
-
-
-
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="点击"
-        android:id="@+id/btn"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"/>
-
-</LinearLayout>
+</layout>

@@ -14,8 +14,5 @@ class OrderFragment : BaseFragment<FragmentOrderBinding>(){
     override fun init() {
 
     }
-    override fun viewBinding(container: ViewGroup?): FragmentOrderBinding {
-        return FragmentOrderBinding.inflate(layoutInflater,container,false)
-    }
 }
 

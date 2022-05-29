@@ -37,8 +37,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         val homeRVAdapter = HomeRVAdapter();
         val listhome = homeViewModel.homeList
         homeRVAdapter.setNewInstance(listhome)
-        b.homeRvTest.layoutManager = LinearLayoutManager(context)
-        b.homeRvTest.adapter = homeRVAdapter
+        binding.homeRvTest.layoutManager = LinearLayoutManager(context)
+        binding.homeRvTest.adapter = homeRVAdapter
         homeRVAdapter.setOnItemClickListener(OnItemClickListener { adapter, view, position ->
             val bundle = Bundle();
             bundle.putInt("pic", listhome.get(position).pic)
@@ -65,9 +65,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         })
     }
 
-    override fun viewBinding(container: ViewGroup?): FragmentHomeBinding {
-        return FragmentHomeBinding.inflate(layoutInflater, container, false)
-    }
 }
 
 

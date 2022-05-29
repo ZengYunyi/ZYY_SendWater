@@ -5,35 +5,42 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.example.zyy_sendwater.R
+import com.example.zyy_sendwater.extensions.getViewBinding
 import com.example.zyy_sendwater.viewModel.MainViewModel
-import com.google.android.material.snackbar.Snackbar
 
 /**
  * @author ZengYunyi
  * @description: zyy21
  * @date :2022/4/1 16:08
  */
-abstract class BaseFragment<T : ViewBinding> : Fragment(){
+abstract class BaseFragment<VB : ViewDataBinding> : Fragment(){
     var vm : MainViewModel? = null
     //fragment通用适配器简化代码
-    private var binding : T? = null
-    val b:T
-        get() = binding!!
+    protected lateinit var binding : VB
+        //私有修饰符不允许声明在当前作用域之外可见。
+        private set
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = viewBinding(container)
+        binding = getViewBinding(inflater,container)
         vm = ViewModelProvider(requireActivity())[MainViewModel::class.java]
-        init()
         return binding?.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        init()
+    }
+
     //删除fragment
     fun remove() = requireActivity().supportFragmentManager.popBackStack()
     //添加fragment
@@ -48,10 +55,12 @@ abstract class BaseFragment<T : ViewBinding> : Fragment(){
 
     override fun onDestroy() {
         super.onDestroy()
-        binding=null
+        //取消绑定，避免内存泄露
+//        ::binding.isInitialized用于判断binding是否已经初始化，如果没有，则取！进入if，进行初始化
+        if(::binding.isInitialized){
+            binding.unbind()
+        }
     }
 
     protected abstract fun init()
-
-    protected abstract fun viewBinding(container: ViewGroup?):T
 }

@@ -25,23 +25,18 @@ import kotlinx.coroutines.flow.collect
  */
 class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     val loginViewModel: LoginViewModel by viewModels()
-    override fun viewBinding(layoutInflater: LayoutInflater): ActivityLoginBinding {
-        return ActivityLoginBinding.inflate(layoutInflater)
-    }
 
     override fun init() {
-        //沉浸式状态栏
+//沉浸式状态栏
         ImmersionBar.with(this).init()
 
-
-
-        b.testBtn.setOnClickListener {
-            if(b.editLoginPassword.text.isNotEmpty() && b.editLoginUsername.text.isNotEmpty()){
-                loginViewModel.getToken(b.editLoginUsername.text.toString(),b.editLoginPassword.text.toString())
+        binding.testBtn.setOnClickListener {
+            if(binding.editLoginPassword.text.isNotEmpty() && binding.editLoginUsername.text.isNotEmpty()){
+                loginViewModel.getToken(binding.editLoginUsername.text.toString(),binding.editLoginPassword.text.toString())
                 loginViewModel.loginLiveData.observe(this) {
                     if (!it.token.equals("")) {
-                        b.text.text = "登录中"
-                        b.numderView.visibility = View.VISIBLE
+                        binding.text.text = "登录中"
+                        binding.numderView.visibility = View.VISIBLE
                         lifecycleScope.launch{
                             delay(1000)
                             shortToast("登录成功")
@@ -58,6 +53,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
 //                b.numderView.visibility = View.VISIBLE
 //            }
         }
+
     }
+
 }
+
 
