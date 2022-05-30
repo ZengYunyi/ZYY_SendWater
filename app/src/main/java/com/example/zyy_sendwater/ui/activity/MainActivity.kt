@@ -79,7 +79,7 @@ class MainActivity :BaseActivity<ActivityMainBinding>() {
         val mainVpAdapter = MainVpAdapter(supportFragmentManager,lifecycle,
             listOf(HomeFragment(),CommunityFragment(),OrderFragment(),MeFragment()))
         //懒加载3个页面
-        binding.vpMain.offscreenPageLimit=3
+        binding.vpMain.offscreenPageLimit=4
         binding.vpMain.adapter = mainVpAdapter
         //禁止viewpager2滑动
 //        binding.vpMain.isUserInputEnabled = false
@@ -92,7 +92,7 @@ class MainActivity :BaseActivity<ActivityMainBinding>() {
             recyclerView.overScrollMode = View.OVER_SCROLL_NEVER
         } catch (e: Exception) {
         }
-        binding.vpMain.setPageTransformer(Vp2TransformerOverlay())
+//        binding.vpMain.setPageTransformer(Vp2TransformerOverlay())
         binding.vpMain.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)

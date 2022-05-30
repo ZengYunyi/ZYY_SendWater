@@ -1,8 +1,6 @@
 package com.example.zyy_sendwater.interfaces
 
-import com.example.zyy_sendwater.data.model.Row
-import com.example.zyy_sendwater.data.model.login
-import com.example.zyy_sendwater.data.model.news
+import com.example.zyy_sendwater.data.model.*
 import com.google.gson.JsonObject
 import org.json.JSONObject
 import retrofit2.Call
@@ -20,4 +18,7 @@ interface Apiservice {
 
     @POST("/login")
     suspend fun getLogin(@Body jsonObject: JsonObject): login
+
+    @GET("/getUserInfo")
+    suspend fun getUserInfo(@Header("token") token:String) : User
 }
