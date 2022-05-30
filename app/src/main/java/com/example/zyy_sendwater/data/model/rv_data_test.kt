@@ -1,4 +1,4 @@
-package com.example.zyy_sendwater.repository.model
+package com.example.zyy_sendwater.data.model
 
 /**
  * @author ZengYunyi

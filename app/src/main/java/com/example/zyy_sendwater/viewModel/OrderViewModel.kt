@@ -2,7 +2,8 @@ package com.example.zyy_sendwater.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.zyy_sendwater.repository.remote.StateEnum
+import com.example.zyy_sendwater.util.StateEnum
+
 
 /**
  * @author ZengYunyi

@@ -4,10 +4,10 @@ import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.zyy_sendwater.R
-import com.example.zyy_sendwater.repository.model.home_data
-import com.example.zyy_sendwater.repository.model.rv_data_test
-import com.example.zyy_sendwater.repository.remote.StateEnum
+import com.example.zyy_sendwater.data.model.home_data
+import com.example.zyy_sendwater.data.model.rv_data_test
 import com.example.zyy_sendwater.util.NetWorkUtil
+import com.example.zyy_sendwater.util.StateEnum
 import kotlinx.coroutines.flow.MutableStateFlow
 import java.util.ArrayList
 

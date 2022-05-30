@@ -4,7 +4,7 @@ import android.view.View
 import androidx.viewbinding.ViewBinding
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.example.zyy_sendwater.repository.model.login
+import com.example.zyy_sendwater.data.model.login
 
 /**
  * @author ZengYunyi

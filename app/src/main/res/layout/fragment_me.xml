@@ -5,53 +5,226 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/title_home"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/blue"
-            android:gravity="center"
-            android:maxLength="16"
-            android:text="@string/menu_me"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-
-
         <FrameLayout
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="100dp"
-            android:layout_gravity="center_horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/background_me">
 
+            <ImageView
+                android:id="@+id/btn_remind"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/remind"
+                android:layout_gravity="right"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="@dimen/dp_10"/>
 
+            <ImageView
+                android:id="@+id/btn_set"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/set"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="@dimen/dp_10"/>
 
-            <com.example.zyy_sendwater.ui.myview.CircleRectView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/rectView"/>
+            <ImageView
+                android:id="@+id/btn_touxiang"
+                android:layout_width="120dp"
+                android:layout_height="110dp"
+                android:src="@drawable/touxiang_nv"
+                android:layout_marginTop="140dp"
+                android:layout_marginLeft="40dp"/>
+            
+            <TextView
+                android:id="@+id/btn_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/strat_bottom"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:gravity="center_vertical"
+                android:layout_marginTop="180dp"
+                android:layout_marginLeft="180dp"
+                android:textSize="20dp"/>
 
-            <com.example.zyy_sendwater.ui.myview.CircleNumderView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:id="@+id/numderView"/>
+            <TextView
+                android:id="@+id/btn_content"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/strat_bottom"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:layout_marginTop="210dp"
+                android:layout_marginLeft="180dp"
+                android:textSize="18dp"/>
 
         </FrameLayout>
 
+        <FrameLayout
+            android:id="@+id/me_set"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:gravity="center_vertical"
+                android:text="个人中心"
+                android:textSize="12dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/right_break"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="35dp"/>
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/gray"/>
+
+        <FrameLayout
+            android:id="@+id/updata_password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:gravity="center_vertical"
+                android:text="修改密码"
+                android:textSize="12dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/right_break"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="35dp"/>
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/gray"/>
+
+        <FrameLayout
+            android:id="@+id/look_hostory"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:gravity="center_vertical"
+                android:text="游览历史"
+                android:textSize="12dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/right_break"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="35dp"/>
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/gray"/>
 
 
 
+        <FrameLayout
+            android:id="@+id/aboutMyPhone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="点击"
-            android:id="@+id/btn"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:gravity="center_vertical"
+                android:text="关于本机"
+                android:textSize="12dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/right_break"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="35dp"/>
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/gray"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/outgin_btn"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+
+
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:background="#CC1010"/>
 
     </LinearLayout>
-
 </layout>

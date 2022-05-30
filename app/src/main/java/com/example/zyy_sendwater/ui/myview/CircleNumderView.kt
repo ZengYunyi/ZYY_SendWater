@@ -165,11 +165,11 @@ class CircleNumderView : View{
     fun drawText(canvas: Canvas?, center: Float){
         //计算进度
         var result=(currentValue*100f/maxValue*1f)
-        var percent= String.format("%.1f",result)+"%"
+        var percent="${(result.toInt()/20)}秒"
 
         textPaint?.textAlign = Paint.Align.CENTER//设置文字居中，文字的x坐标需要注意
         textPaint?.color= textColor!!//设置文字颜色
-        textPaint?.textSize=40f
+        textPaint?.textSize=30f
         textPaint?.strokeWidth=0f//注意圆点要设置宽度为0，否则绘制的文字会重叠
         var bounds=Rect()//文字边框
         textPaint?.getTextBounds(percent,0,percent.length,bounds)//获得绘制文字的边界矩形

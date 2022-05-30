@@ -31,10 +31,10 @@ class CircleRectView : View {
 
         mPaint?.style = Paint.Style.FILL
         var count=0
-        var des = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,5f,resources.displayMetrics)
+        var des = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,2f,resources.displayMetrics)
         while (count++<50){
-            canvas?.drawRect(centerX-3,centerX
-                    -outerRedius,centerX+3,centerY-outerRedius+des,mPaint!!)
+            canvas?.drawRect(centerX-2,centerX
+                    -outerRedius,centerX+2,centerY-outerRedius+des,mPaint!!)
             canvas?.rotate(10.0f,centerX,centerY)
         }
     }

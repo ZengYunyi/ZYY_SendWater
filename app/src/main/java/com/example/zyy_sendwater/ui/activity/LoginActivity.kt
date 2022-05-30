@@ -27,8 +27,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     val loginViewModel: LoginViewModel by viewModels()
 
     override fun init() {
-//沉浸式状态栏
-        ImmersionBar.with(this).init()
+        //沉浸式状态栏
+        ImmersionBar.with(this@LoginActivity).init()
 
         binding.testBtn.setOnClickListener {
             if(binding.editLoginPassword.text.isNotEmpty() && binding.editLoginUsername.text.isNotEmpty()){
@@ -40,20 +40,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
                         lifecycleScope.launch{
                             delay(1000)
                             shortToast("登录成功")
-                            startActivity(Intent(this@LoginActivity,MainActivity::class.java));
+                            startActivity(Intent(this@LoginActivity,MainActivity::class.java))
                         }
                     }
                 }
             }
-//            shortToast(b.motionPassword.isInteractionEnabled.toString())
-//            if(b.editLoginUsername.text.trim().equals("")&&b.editLoginPassword.text.trim().equals("")){
-//                shortToast("请输入正确的账号密码")
-//            }else{
-//                b.text.text = "登录中"
-//                b.numderView.visibility = View.VISIBLE
-//            }
         }
-
     }
 
 }

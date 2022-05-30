@@ -4,7 +4,7 @@ import androidx.core.view.ViewCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.example.zyy_sendwater.R
-import com.example.zyy_sendwater.repository.model.rv_data_test
+import com.example.zyy_sendwater.data.model.rv_data_test
 
 /**
  * @author ZengYunyi

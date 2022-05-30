@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.viewModelScope
 import androidx.viewbinding.ViewBinding
 import com.example.zyy_sendwater.App
@@ -20,7 +21,7 @@ import kotlinx.coroutines.launch
  * @description: zyy21
  * @date :2022/4/1 16:29
  */
-abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(){
+abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity(){
     //activity通用适配器，简化代码
     //LazyThreadSafetyMode有三种：
     //SYNCHRONIZED同步：只会调用一次初始化方法。单例模式：懒汉式，线程安全
