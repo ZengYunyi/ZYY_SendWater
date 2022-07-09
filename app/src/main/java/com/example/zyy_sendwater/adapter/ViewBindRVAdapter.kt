@@ -14,9 +14,6 @@ import com.example.zyy_sendwater.data.model.login
 abstract class ViewBindRVAdapter<binding : ViewBinding,T>(layoutResId: Int) :
     BaseQuickAdapter<T, ViewBindRVAdapter.BaseViewBindingHolder<binding>>(layoutResId) {
 
-
-
-
     override fun convert(holder: BaseViewBindingHolder<binding>, item: T) {
         initRVAd(holder,item)
     }

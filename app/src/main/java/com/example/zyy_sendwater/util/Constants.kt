@@ -9,5 +9,6 @@ class Constants {
     companion object{
         const val BASE_URL="http://43.138.168.147:8080"
         const val LOGIN = "/login"
+
     }
 }
