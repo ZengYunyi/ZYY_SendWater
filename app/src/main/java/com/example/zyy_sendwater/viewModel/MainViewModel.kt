@@ -3,7 +3,7 @@ package com.example.zyy_sendwater.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.zyy_sendwater.base.BaseViewModel
-import com.example.zyy_sendwater.data.model.User
+import com.example.zyy_sendwater.data.model.UserInfo
 import com.example.zyy_sendwater.repository.UserRepository
 import com.example.zyy_sendwater.util.SPUtil
 import com.example.zyy_sendwater.util.StateEnum
@@ -21,7 +21,7 @@ class MainViewModel :BaseViewModel() {
     val bottomNavLiveData = MutableLiveData<Boolean>()
     val vpMainLiveData = MutableLiveData<Boolean>()
 
-    lateinit var user: User
+    lateinit var user: UserInfo.User
 
     fun getUserList(){
         launchNetWork(requestBlock = {

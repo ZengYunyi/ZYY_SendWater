@@ -30,6 +30,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
         //沉浸式状态栏
         ImmersionBar.with(this@LoginActivity).init()
 
+
         binding.testBtn.setOnClickListener {
             if(binding.editLoginPassword.text.isNotEmpty() && binding.editLoginUsername.text.isNotEmpty()){
                 loginViewModel.getToken(binding.editLoginUsername.text.toString(),binding.editLoginPassword.text.toString())

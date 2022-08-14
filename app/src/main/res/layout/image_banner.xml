@@ -1,8 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/image_banner">
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_height="match_parent">
 
 
-</ImageView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/image_banner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/banner_no"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:layout_gravity="top"
+            android:alpha="0.2">
+
+            <TextView
+                android:id="@+id/text_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:gravity="center"></TextView>
+
+        </FrameLayout>
+
+
+
+
+<!--        0xffff00ff是int类型的数据，分组一下0x|ff|ff00ff，0x是代表颜色整数的标记， ff是表示透明度，ff00ff表示颜色，-->
+<!--        注意：这里ffff00ff必须是8个的颜色表示，不接受ff00ff这种6个的颜色表示。-->
+
+
+<!--        颜色和不透明度 （alpha） 值以十六进制表示法表示。-->
+
+<!--        任何一种颜色的值范围都是 0 到 255（00 到 ff）。-->
+
+<!--        对于 alpha，00 表示完全透明，ff 表示完全不透明。-->
+
+<!--        表达式顺序是“aabbggrr”，其中“aa=alpha”（00 到 ff）；“bb=blue”（00 到 ff）；“gg=green”（00到ff）；“rr=red”（00 到 ff）。-->
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

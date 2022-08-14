@@ -1,5 +1,6 @@
 package com.example.zyy_sendwater.base
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +9,10 @@ import android.widget.Toast
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.viewbinding.ViewBinding
 import com.example.zyy_sendwater.R
 import com.example.zyy_sendwater.extensions.getViewBinding
 import com.example.zyy_sendwater.viewModel.MainViewModel
+
 
 /**
  * @author ZengYunyi
@@ -32,6 +33,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         binding = getViewBinding(inflater,container)
+        binding.root.setBackgroundColor(Color.WHITE)
         vm = ViewModelProvider(requireActivity())[MainViewModel::class.java]
         return binding?.root
     }
@@ -51,6 +53,32 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment(){
     fun shortToast(name : String)=Toast.makeText(context,name,Toast.LENGTH_SHORT).show()
     fun longToast(name : String)=Toast.makeText(context,name,Toast.LENGTH_LONG).show()
 
+    open fun jump(fragmentClass: Class<out Fragment?>?, bundle: Bundle?, tag: String?) {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                android.R.anim.slide_in_left,
+                android.R.anim.slide_out_right,
+                android.R.anim.fade_in,
+                android.R.anim.slide_out_right
+            )
+            .addToBackStack(tag)
+            .add(R.id.layMain, fragmentClass!!, bundle)
+            .commit()
+    }
+
+    open fun jumpHide(fragmentClass: Class<out Fragment?>?, bundle: Bundle?, tag: String?) {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                android.R.anim.slide_in_left,
+                android.R.anim.slide_out_right,
+                android.R.anim.fade_in,
+                android.R.anim.slide_out_right
+            )
+            .addToBackStack(tag)
+            .add(R.id.layMain, fragmentClass!!, bundle, tag)
+            .hide(this)
+            .commit()
+    }
 
 
     override fun onDestroy() {

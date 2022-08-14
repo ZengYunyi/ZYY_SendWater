@@ -1,5 +1,6 @@
 package com.example.zyy_sendwater.repository
 
+import com.example.zyy_sendwater.data.model.easyerror
 import com.example.zyy_sendwater.data.model.login
 import com.example.zyy_sendwater.util.NetWorkUtil
 import com.google.gson.JsonObject
@@ -20,4 +21,5 @@ class LoginRepository {
         jsonObject.addProperty("password",password)
         return loginRepository.getLogin(jsonObject)
     }
+
 }

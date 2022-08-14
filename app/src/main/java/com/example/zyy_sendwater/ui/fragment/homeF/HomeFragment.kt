@@ -1,23 +1,19 @@
 package com.example.zyy_sendwater.ui.fragment.homeF
 
-import android.os.Bundle
-import android.transition.Slide
-import android.transition.TransitionInflater
-import android.util.Log
-import android.view.Gravity
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.core.view.ViewCompat
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.chad.library.adapter.base.listener.OnItemClickListener
-import com.example.zyy_sendwater.R
-import com.example.zyy_sendwater.adapter.HomeRVAdapter
+import android.R
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.zyy_sendwater.App
+import com.example.zyy_sendwater.adapter.BannerAdapters
+import com.example.zyy_sendwater.adapter.IconAdapter
 import com.example.zyy_sendwater.base.BaseFragment
 import com.example.zyy_sendwater.databinding.FragmentHomeBinding
-//import com.example.zyy_sendwater.repository.model.rv_data_test
+import com.example.zyy_sendwater.ui.fragment.handbookF.HandBookFragment
+import com.example.zyy_sendwater.util.StateEnum
 import com.example.zyy_sendwater.viewModel.HomeViewModel
+import com.youth.banner.indicator.CircleIndicator
+import java.util.*
+
 
 /**
  * @author ZengYunyi
@@ -25,44 +21,50 @@ import com.example.zyy_sendwater.viewModel.HomeViewModel
  * @date :2022/4/1 16:33
  */
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+
+    val homeViewModel :HomeViewModel by viewModels()
+
     override fun init() {
-        val homeFragment = HomeFragment()
-        sharedElementEnterTransition = TransitionInflater.from(getContext()).inflateTransition(android.R.transition.move)
-        val slideTransition = Slide(Gravity.RIGHT);
-        slideTransition.duration = 1000
-        homeFragment.enterTransition = slideTransition
-        val homeViewModel: HomeViewModel =
-            ViewModelProvider(requireActivity())[HomeViewModel::class.java]
-        homeViewModel.getHomeList()
-        val homeRVAdapter = HomeRVAdapter();
-        val listhome = homeViewModel.homeList
-        homeRVAdapter.setNewInstance(listhome)
-        binding.homeRvTest.layoutManager = LinearLayoutManager(context)
-        binding.homeRvTest.adapter = homeRVAdapter
-        homeRVAdapter.setOnItemClickListener(OnItemClickListener { adapter, view, position ->
-            val bundle = Bundle();
-            bundle.putInt("pic", listhome.get(position).pic)
-            bundle.putString("title", listhome.get(position).name)
-            bundle.putString("content", listhome.get(position).content)
-            bundle.putString("position", "${position}")
-            bundle.putString("tran", ViewCompat.getTransitionName(view.findViewById<ImageView>(R.id.rv_image_home)))
-                fragmentManager?.beginTransaction()
-                    ?.add(R.id.layMain, HomeTestFragment::class.java, bundle, "")
-                    ?.addSharedElement(
-                        view.findViewById<TextView>(R.id.rv_home_title),
-                        "a1${position}"
-                    )
-                    ?.addSharedElement(
-                        view.findViewById<ImageView>(R.id.rv_image_home),
-                        "a2${position}"
+        homeViewModel.getAdInfo()
+        homeViewModel.getIconInfo()
+        homeViewModel.homeLiveData.observe(this) {
+            when (it) {
+                StateEnum.SUCCESS->{
+                    binding.homeBanner.apply {
+                        setAdapter(BannerAdapters(homeViewModel.bannerList!!))
+                        addBannerLifecycleObserver(this@HomeFragment)
+                        setIndicator(CircleIndicator(binding.homeBanner.context));
+                        setBannerGalleryMZ(20,0.8f)
+                        setIndicatorWidth(20,20)
+                        start()
+                    }
+                }
+                StateEnum.FAIL->{
 
-                )
-                    ?.addToBackStack("")
-                    ?.commit()
-                Log.i("ddddd", "a2${bundle?.getString("position")!!}")
+                }
+            }
+        }
+        binding.rvHomeIcon.layoutManager = GridLayoutManager(App.appContext,3)
+        var iconAdapter = IconAdapter()
+        var iconList = homeViewModel.iconList
+        iconAdapter.data = iconList
+        binding.rvHomeIcon.adapter = iconAdapter
+        iconAdapter.setOnItemClickListener { adapter, view, position ->
+            when(iconList[position].title){
+                "作物指南"->{}
+                "植物库"->{
+                    jump(HandBookFragment::class.java,null,"handbook")
+                    vm!!.bottomNavLiveData.value = false
+                }
+                "集市"->{}
+            }
+        }
 
-            vm?.bottomNavLiveData?.postValue(false)
-        })
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding.homeBanner.stop()
     }
 
 }

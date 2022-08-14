@@ -5,12 +5,17 @@ import androidx.lifecycle.MutableLiveData
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.example.zyy_sendwater.App
 import com.example.zyy_sendwater.base.BaseViewModel
+import com.example.zyy_sendwater.data.model.easyerror
 import com.example.zyy_sendwater.data.model.login
 import com.example.zyy_sendwater.repository.LoginRepository
 import com.example.zyy_sendwater.util.NetWorkUtil
 import com.example.zyy_sendwater.util.SPUtil
+import com.google.gson.Gson
 import com.google.gson.JsonObject
 import kotlinx.coroutines.flow.MutableStateFlow
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
 import kotlin.coroutines.coroutineContext
 
 /**

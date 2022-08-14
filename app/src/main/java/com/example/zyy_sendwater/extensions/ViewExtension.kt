@@ -18,6 +18,9 @@ inline fun View.gone(){
     this.visibility = View.GONE
 }
 
+//点击事件 扩展函数的用法
+fun <T : View> T.click(block: (T) -> Unit) = setOnClickListener { block(it as T) }
+
 const val LDPI: Int = DisplayMetrics.DENSITY_LOW
 const val MDPI: Int = DisplayMetrics.DENSITY_MEDIUM
 const val HDPI: Int = DisplayMetrics.DENSITY_HIGH

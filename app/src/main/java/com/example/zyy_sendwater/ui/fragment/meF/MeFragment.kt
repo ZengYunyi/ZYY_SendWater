@@ -20,17 +20,7 @@ import kotlinx.coroutines.*
  * @date :2022/4/1 16:33
  */
 class MeFragment : BaseFragment<FragmentMeBinding>(){
-    val mainViewModel:MainViewModel by viewModels()
-    override fun init() {
-        mainViewModel.getUserList()
-        mainViewModel.userLiveData.observe(this){
-            when(it){
-                StateEnum.SUCCESS->{
-                    binding.user = mainViewModel.user
-                    Glide.with(binding.btnTouxiang.context).load(mainViewModel.user.data.avatar).into(binding.btnTouxiang)
-                }
-            }
 
-        }
+    override fun init() {
     }
 }

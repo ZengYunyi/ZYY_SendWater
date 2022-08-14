@@ -1,6 +1,6 @@
 package com.example.zyy_sendwater.repository
 
-import com.example.zyy_sendwater.data.model.User
+import com.example.zyy_sendwater.data.model.UserInfo
 import com.example.zyy_sendwater.util.NetWorkUtil
 
 /**
@@ -13,7 +13,7 @@ class UserRepository {
         NetWorkUtil.service
     }
 
-    suspend fun getUserInfo(token:String):User{
+    suspend fun getUserInfo(token:String):UserInfo.User{
         return userRepository.getUserInfo(token)
     }
 }

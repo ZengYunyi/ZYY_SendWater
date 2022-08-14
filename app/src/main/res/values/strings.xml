@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">ZYY_SendWater</string>
+    <string name="app_name">云农</string>
     <string name="menu_home">主页</string>
-    <string name="menu_order">订单</string>
+    <string name="menu_order">商城</string>
     <string name="menu_me">我的</string>
-    <string name="menu_community">社区</string>
+    <string name="menu_community">咨询</string>
     <string name="test_name">testName</string>
     <string name="home_rv_text">homeRvText</string>
     <string name="home_rv_iamge">homeRvIamge</string>
